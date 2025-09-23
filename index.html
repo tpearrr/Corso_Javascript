@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le variabili in JavaScript</title>
+</head>
+
+<body>
+    <script>
+        // le variabili sono key sensitive
+        // non si puo usare il -
+        // camel case CONSIGLIATO
+        let nome = "Tiberious";
+        nome = "Tiberio"; // ridefinizione
+
+        let dichiarazioneVariabileNuova; //si legge meglio
+        let dichiarazione_variabile_nuova; // si legge meglio
+        let dichiarazionevariabilenuova; // si legge male
+
+        let classe_2 = ["Luca", "Matteo", "Ernst"]; // array, il conto parte da 0
+        console.log(classe_2[0]); // Luca
+        console.log(classe_2);
+
+        let persona = {
+            nome: "Tiberio",
+            cognome: "Perina",
+            codiceFiscale: "PRNTBR85M30H501X", //é ovviamente falso
+            eta: 26,
+            hobby: ["calcio", "programmazione", "gaming"]
+        };
+        console.log(persona);
+        console.log(persona.hobby);
+        console.log(persona.hobby[1]); // programmazione
+
+        let umano = "Tiberio"; // stringa
+        umano = 26;
+
+        console.log(typeof umano); //number, non stringa
+
+        const persona2 = "database:hosting.com"; // const non si puo ridefinire
+        persona2 = "Tiberio" // errore "Uncaught TypeError: Assignment to constant variable."
+    </script>
+</body>
+
+</html>
