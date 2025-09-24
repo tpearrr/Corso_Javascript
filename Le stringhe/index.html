@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le stringhe</title>
+</head>
+<body>
+    <script>
+
+        let testo = 'Ciao, come va?';
+        let testo2 = 'Sono l\'apostrofo';
+        let testo3 = "Sono l'apostrofo";
+        console.log(testo);
+
+        let nome = 'Mario';
+        let somma = 'Ciao sono ' + nome + ' come va?';
+        console.log(somma);
+        let conNumeri = "56" + "56";
+        console.log(conNumeri); // 5656
+        console.log(Number("56") + Number("56")); // 112
+
+        //template literal `` 
+        let text = 'Mario';
+        let template = `Ciao "sono" <h1>${text}</h1> 'come' va?`;
+        document.body.innerHTML = template;
+    </script>
+</body>
+</html>
