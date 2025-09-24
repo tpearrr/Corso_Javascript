@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I numeri</title>
+</head>
+<body>
+    <script>
+        let num0 = 21;
+        let num1 = 5;
+        let num2 = 10.1234567;
+        let num3 = "6";
+        num3 +4; // "64" (stringa)
+        console.log(Number(num3) + 4); // 10 (numero)
+        console.log (typeof num1); // number
+        console.log (typeof num2); // number
+        console.log (typeof num3); // string
+
+        let num4 = 12.1519185985199;
+        console.log (num4.toFixed(2)); // 12.15
+        console.log (num4.toFixed(5)); // 12.15192
+
+        somma = num0 + num1;
+        console.log (somma); // 26. Sintassi guale per + - * /
+        resto = num0 % num1;
+        console.log (resto); // 1 (resto della divisione) 
+        // utile per calcolare numeri pari o dispari, se num%2 ha resto = 0 il numero è pari
+        
+        ordine = 4 + 10 * 3 -5; // 29. L'ordine delle operazioni è * / % prima di + -
+        console.log (ordine);
+
+        incremento = 5;
+        incremento++; // incremento = incremento + 1
+        console.log (incremento); // 6. idem con decremento--
+
+        incremento += 5; // incremento = incremento + 5
+        console.log (incremento); // 11. Idem con -= *= /=
+
+        let comparazione = 10;
+        console.log (comparazione<20);//true, se > false
+        console.log (comparazione<=10);//true, se < false
+        console.log (comparazione==10);//true, se != false
+        console.log (comparazione=="10"); //true ==non confronta il tipo
+        console.log (comparazione!=10);//false, se == true
+        console.log (comparazione==="10");//false, se != true (=== confronta anche il tipo)
+    </script>
+</body>
+</html>
