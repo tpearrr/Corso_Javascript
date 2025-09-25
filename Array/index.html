@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        let citta = ["Roma", "Milano", "Napoli", "Torino"];
+        // console.log(citta);
+
+        let data = ['Milano', 'Torino', 'Roma', 'Napoli', 'Bologna', 'Firenze', 'Venezia'];
+        // console.log(data);
+
+        for (i = 0; i < data.length; i++) {
+            // console.log(data[i]);
+        }
+
+        let citta2 = 'Roma,Milano,Napoli,Torino,Verona';
+        let splitted = citta2.split(',');
+        splitted.push('Firenze');
+        
+        console.log(splitted); // Mostra l'array con Firenze
+        console.log(splitted.join(',')); // Mostra la stringa aggiornata
+        splitted.pop(Verona); 
+    </script>
+</body>
+
+</html>
