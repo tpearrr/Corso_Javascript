@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condizioni If Else Switch</title>
+</head>
+
+<body>
+    <script>
+
+        let nome = 'Tiberio';
+        let eta = '26';
+//If Else
+        if (nome === 'Tiberio') {
+            console.log('Ciao Tiberio');
+        } else if (nome === 'Marco') {
+            console.log('Ciao Marco');
+        } else if (nome === 'Matteo') {
+            console.log('Ciao Matteo');
+        } else {
+            console.log('Ciao straniero');
+        }
+
+
+        if (eta >= 20) {
+            console.log('Puoi entrare');
+        } else if (eta === 26) {
+            console.log('Puoi entrare se diventi un number');
+        } else {
+            console.log('Non puoi entrare');
+        }
+
+
+        if (eta > 18) {
+            if (eta % 2 === 0) {
+                console.log('Puoi entrare, la tua età è pari');
+            } else {
+                console.log('Puoi entrare, la tua età è dispari');
+            }
+        }
+
+// && e ||
+        if (eta > 20 && eta % 2 === 0) {
+            console.log('Puoi entrare, la tua età è maggiore di 20 ed è pari');
+        } else {
+            console.log('Non puoi entrare, la tua età non è maggiore di 20 o non è pari');
+        }
+
+        let numero = 10;
+
+        if (eta > 20 && numero % 2 === 0) {
+            console.log('Puoi entrare, la tua età è maggiore di 20 ed è pari');
+        } else {
+            console.log('Non puoi entrare, la tua età non è maggiore di 20 o non è pari');
+        }
+
+
+        if (eta > 20 || numero % 2 === 0) {
+            console.log('Puoi entrare, la tua età è maggiore di 20 o è pari');
+        } else {
+            console.log('Non puoi entrare, la tua età non è maggiore di 20 o è dispari');
+        }
+
+        let isOnline = false;
+        if (!isOnline) {
+            console.log('Sei offline');
+        } else {
+            console.log('Sei online');
+        }
+//Switch
+        switch (nome) {
+            case 'Tiberio':
+                console.log('Ciao Tiberio');
+                break;
+            case 'Marco':
+                console.log('Ciao Marco');
+                break;
+            case 'Matteo':
+                console.log('Ciao Matteo');
+                break;
+            default: // se non corrisponde a nessuno dei case
+                console.log('Ciao straniero');
+        }
+
+        switch (eta) {
+            case 18:
+                console.log('Hai 18 anni');
+                break;
+            case 19:
+                console.log('Hai 19 anni');
+                break;
+            case 20:
+                console.log('Hai 20 anni');
+                break;
+            default:
+                console.log('Non hai 18, 19 o 20 anni');
+        }
+// ternary operator
+        let num = 11;
+        let risultato = (num % 2 === 0) ? 'Il numero è pari' : 'Il numero è dispari';
+        console.log(risultato);
+    </script>
+</body>
+</html>
