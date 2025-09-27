@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I cicli For, While e DoWhile</title>
+</head>
+
+<body>
+    <script>
+        //for
+        let arrayy = [7, 3, 45, 14, 36, 86, 91];
+        for (let i = 0; i < arrayy.length; i++) {
+            if (arrayy[i] % 2 == 0) {
+                //break;
+                continue;
+            }
+            console.log(arrayy[i]);
+        }
+
+        //while: prima verifica la condizione, poi esegue il codice
+        let i = 0;
+        while (i < arrayy.length) {
+            console.log('while: ', arrayy[i]);
+            i++;
+        }
+
+        //do while: esegue il codice prima di verificare la condizione
+        //lo si usa quando vogliamo che il codice venga eseguito almeno 1 volta
+        let k = 0;
+        do {
+            console.log('do while: ', arrayy[k]);
+            k++;
+        } while (k < arrayy.length);
+
+
+    </script>
+</body>
+
+</html>
