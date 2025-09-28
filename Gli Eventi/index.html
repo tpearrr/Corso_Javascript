@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli Eventi</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="fname">Nome:</label>
+            <input type="text" id="fname">
+        </div>
+        <div>
+            <label for="lname">Cognome:</label>
+            <input type="text" id="lname">
+        </div>
+        <div>
+            <input id="submit" type="submit">
+        </div>
+    </form>
+    <p></p>
+
+    <script>
+        const form = document.querySelector("form");
+        const nome = document.getElementById("fname");
+        const cognome = document.getElementById("lname");
+        const paragrafo = document.querySelector("p");
+
+        form.onsubmit = function (e) {
+            if (nome.value === "" || cognome.value === "") { //se uno dei due campi è vuoto
+                e.preventDefault(); //blocca l'invio del form
+                paragrafo.textContent = "Compila tutti i campi!";//messaggio di errore
+            }
+        };
+
+        // nome.onfocus = function() {
+        //     console.log('sono in focus')
+        // };
+
+        nome.addEventListener("focus", () => {
+            console.log('sono in focus dal listener')
+        });
+
+        nome.addEventListener("focus", function (e) {
+            console.log(e.target)
+        });
+        
+        //event bubbling serve 
+    </script>
+</body>
+
+</html>
