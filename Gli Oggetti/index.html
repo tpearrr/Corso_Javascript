@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli oggetti</title>
+</head>
+
+<body>
+    <!-- collezione di dati in correlazione tra loro -->
+    <script>
+        const chiave = "genere"; //variabile per dimostrare l'accesso dinamico alle proprietà
+        const persona = {
+            nome: "Mario", //proprietà dell'oggetto persona
+            cognome: "Rossi",
+            genere: "Maschio",
+            eta: 30,
+            interessi: ["calcio", "musica", "lettura"],
+            indirizzo: {
+                via: "Via Roma",
+                citta: "Milano",
+                cap: "20100"
+            },
+            saluta: function () { //saluta é il metodo dell'oggetto persona
+                console.log(`Ciao sono ${persona.nome} ${persona.cognome}`);
+            }
+        }
+
+        console.log(persona.nome); //accesso alla proprietà nome
+        console.log(persona.interessi[1]); //accesso al secondo elemento dell'array interessi
+        console.log(persona.indirizzo.cap); //accesso alla proprietà cap dell'oggetto indirizzo
+
+        persona.saluta(); //chiamata al metodo saluta
+
+        console.log(persona['nome']); //accesso alla proprietà nome con notazione a parentesi quadre
+        console.log(persona['interessi'][0]); //accesso al primo elemento dell'array interessi con notazione a parentesi quadre
+        console.log(persona['indirizzo']['citta']); //accesso alla proprietà citta dell'oggetto indirizzo con notazione a parentesi quadre
+
+        //bracket notation permette di usare variabili per accedere alle proprietà
+        console.log(persona.chiave); //undefined perché non esiste la proprietà chiave nell'oggetto persona
+        console.log(persona[chiave]); //accesso dinamico alla proprietà genere usando la variabile chiave 
+
+        persona.nome = "Luigi"; //modifica della proprietà nome
+        persona.colorePreferito = "Blu"; //aggiunta di una nuova proprietà colorePreferito
+        console.log(persona);
+
+        persona.saluta
+    </script>
+</body>
+
+</html>
