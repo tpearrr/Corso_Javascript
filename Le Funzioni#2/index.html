@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le funzioni pt. 2</title>
+
+<style>
+    input{
+        display: block;
+        margin-bottom: 20px;
+    }
+    button{
+        padding: 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+    }
+</style>    
+</head>
+<body>
+    <input type="text" name = "nome" placeholder="nome persona">
+    <button>Salutami</button>
+    <h1>Nessun saluto</h1>
+    <script>
+
+        let button = document.querySelector('button')
+        let title = document.querySelector('h1')
+        let nome = document.querySelector('input')
+
+        function saluta(name = 'Marco'){
+            title.innerHTML = `Ciao ${name}`;
+        }
+
+        button.addEventListener('click', () =>{
+
+            saluta(nome.value);
+        })
+
+    </script>
+</body>
+</html>
