@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le funzioni pt. 3</title>
+
+<style>
+    input{
+        display: block;
+        margin-bottom: 20px;
+    }
+    button{
+        padding: 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+    }
+</style>    
+</head>
+<body>
+    <input type="text" name = "nome" placeholder="inserisci un numero">
+    <button>Calcola cubo</button>
+    <h1>-</h1>
+    <script>
+
+        let button = document.querySelector('button')
+        let title = document.querySelector('h1')
+        let numero = document.querySelector('input')
+
+        function cubo(number){
+            let result = number * number * number;
+            console.log(result);
+            return result;
+        }
+        button.addEventListener('click', () =>{
+            cubo(numero.value);
+            title.innerHTML = cubo(numero.value);
+        });
+
+    </script>
+</body>
+</html>
