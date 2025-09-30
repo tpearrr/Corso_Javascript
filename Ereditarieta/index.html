@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ereditarietá</title>
+</head>
+
+<body>
+    <script>
+        // function Persona(nome, cognome, eta, genere, interessi) {
+        //     this.nome = nome;
+        //     this.cognome = cognome;
+        //     this.eta = eta;
+        //     this.genere = genere;
+        //     this.interessi = interessi;
+        //     this.saluta = function () {
+        //         console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}`);
+        //     };
+        // }
+
+        // function Persona() {
+
+        // }
+
+        // function Insegnante(nome, cognome, eta, genere, interessi, materia) {
+        //     Persona.call(this, nome, cognome, eta, genere, interessi);
+        //     this.materia = materia;
+        //     this.saluta = function () {
+        //         console.log(`Ciao, mi chiamo ${this.nome} e insegno ${this.materia}`);
+        //     };
+        // }
+
+
+
+        // const insegnante = new Insegnante('Mario', 'Rossi', 40, 'maschio', ['calcio', 'musica'], 'matematica');
+        // console.log(insegnante);
+        // insegnante.saluta(); // Output: Ciao, mi chiamo Mario Rossi e insegno matematica
+
+
+
+        class Persona {
+            constructor(nome, cognome, eta, genere, interessi) {
+                this.nome = nome;
+                this.cognome = cognome;
+                this.eta = eta;
+                this.genere = genere;
+                this.interessi = interessi;
+            }
+
+            saluta() {
+                console.log(`Ciao, mi chiamo ${this.nome} ${this.cognome}`);
+            }
+
+        }
+
+
+        class Insegnante extends Persona {
+            constructor(nome, cognome, eta, genere, interessi, materia) {
+                super(nome, cognome, eta, genere, interessi);
+                this.materia = materia;
+            }
+            get materia() { // getter e setter per la proprietà materia servono per controllare l'accesso alla proprietà materia
+                return this._materia; 
+            }
+            set materia(nuovaMateria) {
+                this._materia = nuovaMateria;
+            }
+            saluta() {
+                console.log(`Ciao, mi chiamo ${this.nome} e insegno ${this.materia}`);
+            }
+
+            riprendiAlunno(nomeAlunno) { // metodo esclusivo della classe Insegnante
+                console.log(`${this.nome}: Non si mangia in classe${nomeAlunno}!`);
+            }
+        }
+
+        const insegnante = new Insegnante('Mario', 'Calcolo', 40, 'maschio', ['calcio', 'musica'], 'Matematica');
+        // console.log(insegnante);
+        insegnante.riprendiAlunno('Tiberio');
+        console.log(insegnante.materia);
+        insegnante.materia = 'Educazione fisica'
+        console.log(insegnante.materia);
+    </script>
+</body>
+
+</html>
