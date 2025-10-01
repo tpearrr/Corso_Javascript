@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+<body>
+    <script>
+        let requestURL = './classe.json'; // Percorso del file JSON
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            const classe = request.response;
+            console.log(classe);
+            console.log(classe.insegnanti[1].cognome + ' ' + classe.insegnanti[1].nome);
+        }
+    </script>
+</body>
+</html>
