@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="date">Vai</button>
+    <button id="alert">Alert</button>
+
+    <script>
+        //javascript è single-threaded (usa un solo thread)
+        //un thread è un flusso di esecuzione
+        // un'operazione pesante blocca il thread principale
+        //e blocca l'interfaccia utente
+        
+        const btn = document.getElementById("date");
+        const btnAlert = document.getElementById("alert");
+        btn.addEventListener("click", () => {
+            let myDate;
+            for (let i = 0; i < 10000000; i++) {
+                // Simulazione di un'operazione pesante
+                let myDate = new Date();
+                myDate = date
+            }
+            console.log(myDate);
+
+            let pElm = document.createElement("p");
+            pElm.textContent = "This is a newly-added paragraph";
+            document.body.appendChild(pElm);
+        });
+        btnAlert.addEventListener("click", () => {
+            alert("Ciao!");
+        });
+    </script>
+</body>
+
+</html>
