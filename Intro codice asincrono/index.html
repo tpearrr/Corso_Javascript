@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    1) JS sync
+    2) JS async
+    3) Async callbacks
+    4) Promises (fetch)  
+-->
+
+<button>Vai</button>
+<script>
+    // const btn = document.querySelector('button');
+    // btn.addEventListener('click', () => {
+    //     alert('Mi hai cliccato, ora creeró un paragrafo'); //codice sincrono, blocca tutto il resto
+
+    //     let pElem = document.createElement('p'); //non viene generato nel DOM finche non chiudiamo l'alert
+    //     pElem.textContent = 'Ciao sono un paragrafo';
+    //     document.body.appendChild(pElem);
+
+    // });
+
+
+    // let response = fetch('https://ak.picdn.net/shutterstock/videos/11773709/thumb/10.jpg'); //fetch è asincrono, non blocca il thread principale
+    // console.log(response); //Promise { <pending> }
+    // let blob = response.blob();
+
+    // ===================================================================================
+
+    // function loadAsset(url, type, callback) { //metodo vecchio per caricare risorse
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open('GET', url);
+    //     xhr.responseType = type;
+
+    //     xhr.onload = function () {
+    //         callback(xhr.response);
+    //     };
+    //     xhr.send();
+    // }
+
+    // function displayImage(blob) {
+    //     let objectURL = URL.createObjectURL(blob);
+    //     let imgElem = document.createElement('img');
+    //     imgElem.src = objectURL;
+    //     document.body.appendChild(imgElem);
+    // }
+
+    // loadAsset('https://ak.picdn.net/shutterstock/videos/11773709/thumb/10.jpg', 'blob', displayImage);
+
+    // ===================================================================================
+
+
+    fetch('classe.json').then(function(response) { //fetch serve per fare richieste HTTP, restituisce una promise
+        return response.json(); //ritorna un'altra promise
+    }).then(function(json) {
+        classe = json; //quando la promise viene risolta, entra in questo then
+        // initialize(); errore volontario per verificare il funzionamento del catch
+        console.log('Dati: ', classe)
+    }).catch(function(err) { //se c'è un errore in una delle promise, entra in questo catch
+        console.log('Errore: ', err.message);
+    });
+    //tutto questo serve per non bloccare il thread principale e per gestire le operazioni asincrone
+</script>
+</body>
+
+</html>
