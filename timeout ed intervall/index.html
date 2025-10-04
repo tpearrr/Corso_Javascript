@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout e setInterval</title>
+</head>
+
+<body>
+    <button>Vai</button>
+    <p id="demo">0</p>
+    <script>
+        // let prova = setTimeout(saluta, 5000); 
+        const btn = document.querySelector("button");
+        // function saluta() {
+        //     alert("Ciao sono in timeout!");
+        // }
+
+        // btn.addEventListener("click", function() {
+        //     clearTimeout(prova); // Annulla il timeout se il pulsante viene cliccato
+        // });
+
+        function displayTime() {
+            let date = new Date();
+            let time = date.toLocaleTimeString();
+            document.getElementById("demo").textContent = time;
+        }
+
+        const createClock = setInterval(displayTime, 1000);
+
+        btn.addEventListener("click", function() {
+            clearInterval(createClock); // Annulla l'intervallo se il pulsante viene cliccato
+        });
+
+    </script>
+</body>
+
+</html>
