@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Promise</title>
+</head>
+<body>
+    <script>
+        // // questo è un esempio di codice che utilizza callback per gestire operazioni asincrone senza Promise
+        // choseToppings(function(toppings) {
+        //     placeOrder(toppings, function(order) {
+        //         collectOrder(order, function(pizza) {
+        //             eatPizza(pizza);
+        //             }, failureCallback);
+        //         }, failureCallback);
+        //     }, failureCallback);
+        
+            
+        //     choeseToppings()
+        //         .then(function(toppings) {
+        //             return placeOrder(toppings);
+        //         })
+        //         .then(function(order) {
+        //             return collectOrder(order);
+        //         })
+        //         .then(function(pizza) {
+        //             eatPizza(pizza);
+        //         })
+        //         .catch(function(error) {
+        //             console.error("Si è verificato un errore:", error);
+        //         });
+
+
+        //         //versione piu ordinata e leggibile con arrow function
+        //         choseToppings()
+        //         .then(toppings => {
+        //             return placeOrder(toppings);
+        //         })
+        //         .then(order => {
+        //             return collectOrder(order);
+        //         })
+        //         .then(pizza => {
+        //             eatPizza(pizza);
+        //         })
+        //         .catch(function(error) {
+        //             console.error("Si è verificato un errore:", error);
+        //         });
+
+
+                fetch('pizza.jpg')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }else{
+                        return response.blob();
+                    }
+                })
+                .then(myBlob => {
+                    let objectURL = URL.createObjectURL(myBlob);
+                    let image = document.createElement('img');
+                    image.src = objectURL;
+                    document.body.appendChild(image);
+                })
+                .catch(e => {
+                    console.log('There has been a problem with your fetch operation: ' + e.message);
+                });
+
+
+                let timeoutPromise = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('Operazione completata dopo 2 secondi');
+                    }, 2000);
+                });
+
+                function timeoutPromise(message, interval) {
+                    return new Promise((resolve, reject) => {
+                        if (message ==='' || typeof message !== 'string') {
+                            reject('messaggio non valido');
+                        } else if (isNaN(interval) || interval < 0) {
+                            reject('intervallo non valido');
+                        } else {
+                            setTimeout(() => {
+                                resolve(message);
+                            }, interval);
+                        }
+                    });
+                };
+                timeoutPromise('Ciao dopo 2 secondi', 2000)
+                .then((message) => {
+                    alert(message);
+                })
+                .catch((error) => {
+                    console.error('Errore:', error);
+                });
+    </script>
+</body>
+</html>
