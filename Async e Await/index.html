@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async e Await</title>
+</head>
+
+<body>
+    <script>
+        async function hello() {
+            return "hello";
+        }
+
+        let prova = async () => { return "ciao" }
+
+        console.log(hello());
+        console.log(prova());
+
+        hello().then((value) => { console.log(value) });
+        hello().then(console.log); //avendo un unico parametro é possibile non fare la arrow function
+
+        async function hello2() {
+            return greeting = await Promise.resolve("hello async and await"); //greeting serve a memorizzare il valore ritornato dalla promise. 
+            // await fa si che il codice aspetti che la promise venga risolta prima di andare avanti
+        }
+
+        hello2().then(console.log);
+        //==================================================================================
+
+        // fetch('pizza.jpg')
+        //     .then(response => {
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! status: ${response.status}`);
+        //         } else {
+        //             return response.blob();
+        //         }
+        //     })
+        //     .then(myBlob => {
+        //         let objectURL = URL.createObjectURL(myBlob);
+        //         let image = document.createElement('img');
+        //         image.src = objectURL;
+        //         document.body.appendChild(image);
+        //     })
+        //     .catch(e => {
+        //         console.log('There has been a problem with your fetch operation: ' + e.message);
+        //     });
+
+
+
+        // riscriviamo il codice di fetch con async e await.
+        // fetch ritorna una promise quindi possiamo usare await per aspettare che venga risolta
+        // questo codice é piú leggibile e semplice da capire
+        async function myFetch() {
+            try{
+            let response = await fetch('pizza.jpg');
+            let myBlob = await response.blob();
+
+            let objectURL = URL.createObjectURL(myBlob);
+            let image = document.createElement('img');
+            image.src = objectURL;
+            document.body.appendChild(image);
+        } catch(e){
+            console.log('There has been a problem with your fetch operation: ' + e.message);
+        }
+    }
+
+        myFetch().catch(e => {
+            console.log('There has been a problem with your fetch operation: ' + e.message);
+        });
+
+
+
+    </script>
+</body>
+
+</html>
