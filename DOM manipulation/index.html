@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipolazione del DOM</title>
+
+
+    <style>
+        .modificaStili {
+            color: red;
+            background-color: chartreuse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="bottone" class="prova">Bottone</button>
+    <div class="prova"></div>
+    <span class="prova"></span>
+
+    <script>
+        //prendere gli elementi
+        let x = document.getElementById("bottone"); //prende un elemento con un determinato id
+        let y = document.querySelector("button"); //prende il primo elemento che corrisponde al selettore
+        let Z = document.querySelector("#bottone"); //prende un elemento con un determinato id
+        let K = document.querySelector(".prova"); //prende il primo elemento con una determinata classe
+
+        let w = document.querySelectorAll(".prova");//prende anche tutti gli elementi con un determinato selettore
+        let j = document.getElementsByClassName("prova"); //prende anche tutti gli elementi con una determinata classe
+
+        //creare nuovi nodi
+        const div = document.querySelector("div");
+        const paragrafo = document.createElement("p"); //crea un nuovo elemento p (non ancora visibile)
+        paragrafo.textContent = "Ciao sono un paragrafo dinamico"; //aggiunge del testo al paragrafo
+        div.appendChild(paragrafo); //aggiunge il paragrafo come figlio del div
+
+        const extraTesto = document.createTextNode("Ciao sono un testo dinamico"); //crea un nodo di testo
+        paragrafo.appendChild(extraTesto); //aggiunge il nodo di testo come figlio del paragrafo
+
+        //spostare e rimuovere nodi
+        document.body.appendChild(paragrafo); //sposta il paragrafo come figlio del body e non più del div
+        paragrafo.removeChild(extraTesto); //rimuove il nodo di testo dal paragrafo
+        extraTesto.remove(); //rimuove il nodo di testo direttamente
+
+        //Manipolare stili
+        paragrafo.style.color = "red";
+        paragrafo.style.backgroundColor = "black";
+        paragrafo.style.textAlign = "center";
+        paragrafo.style.padding = "10px";
+        paragrafo.style.borderRadius = "5px";
+
+        //Aggiungere attributi
+        paragrafo.setAttribute("class", "modificaStili"); //aggiunge una classe al paragrafo
+        paragrafo.setAttribute("data-value", "ciao"); //aggiunge un attributo personalizzato al paragrafo
+        console.log(paragrafo.getAttribute("data-value")); //legge il valore dell'attributo personalizzato
+
+
+    </script>
+</body>
+
+</html>
