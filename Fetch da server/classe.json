@@ -1,0 +1,43 @@
+{
+    "nome": "4B",
+    "Scuola": "Ettore Bolisani",
+    "scuolaSabato": true,
+    "insegnanti": [
+        {
+            "nome": "Annarita",
+            "cognome": "Bonci",
+            "materieInsegnate": [
+                "Italiano",
+                "Storia",
+                "Antologia"
+            ]
+        },
+        {
+            "nome": "Cristiano",
+            "cognome": "Spadaccini",
+            "materieInsegnate": [
+                "Matematica",
+                "Scienze",
+                "Tecnologia"
+            ]
+        }
+    ],
+    "alunni": [
+        {
+            "nome": "Luca",
+            "cognome": "Rossi"
+        },  
+        {
+            "nome": "Matteo",
+            "cognome": "Salvini"
+        },
+        {
+            "nome": "Giorgia",
+            "cognome": "Meloni"
+        }
+    ],
+    "orari" : {
+        "mattina" : ["Storia", "Matematica", "Italiano", "Scienze"],
+        "pomeriggio" : ["Tecnologia", "Antologia"]
+    }
+}

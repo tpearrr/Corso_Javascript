@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch dal server</title>
+</head>
+<body>
+    <script>
+        let classeXML;
+        let classeFetch;
+
+        let url = "./classe.json";
+        let request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.responseType = "json";
+
+        request.onload = function() {
+            classeXML = request.response;
+            console.log("Classe caricata con XMLHttpRequest:", classeXML);
+        };
+
+        request.send();
+
+
+        fetch(url)
+        .then(response => response.json())
+        .then(json => {
+            classeFetch = json;
+            console.log("Classe caricata con Fetch:", classeFetch);
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>
